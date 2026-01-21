@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Stopwatch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-stopwatch"></i>Stopwatch</h1>
+            <p class="subtitle">Precision timing with lap functionality</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="stopwatch-display">
+                <div class="time-display" id="display">
+                    <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+                    <span class="milliseconds">.00</span>
+                </div>
+                
+                <div class="lap-counter">
+                    <i class="fas fa-flag"></i> Laps: <span id="lapCount">0</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn">
+                    <i class="fas fa-play"></i> Start
+                </button>
+                <button class="btn btn-secondary" id="pauseBtn" disabled>
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="btn btn-lap" id="lapBtn" disabled>
+                    <i class="fas fa-flag"></i> Lap
+                </button>
+                <button class="btn btn-reset" id="resetBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+            
+            <div class="laps-container">
+                <div class="laps-header">
+                    <h3><i class="fas fa-list-ol"></i> Lap Times</h3>
+                    <button class="btn-clear" id="clearLapsBtn">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+                
+                <div class="laps-table">
+                    <div class="table-header">
+                        <div class="col-lap">Lap #</div>
+                        <div class="col-time">Lap Time</div>
+                        <div class="col-total">Total Time</div>
+                    </div>
+                    <div class="laps-list" id="lapsList">
+                        <!-- Lap items will be added here dynamically -->
+                        <div class="no-laps">
+                            <i class="fas fa-flag-checkered"></i>
+                            <p>No lap times recorded yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p> <span id="currentYear"></span> </p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
